@@ -1,7 +1,9 @@
 package br.com.mtisi.course.contorller;
 
 
+import br.com.mtisi.course.model.Order;
 import br.com.mtisi.course.model.User;
+import br.com.mtisi.course.services.OrderService;
 import br.com.mtisi.course.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,21 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/users")
-public class UserController {
+@RequestMapping(value = "/orders")
+public class OrderController {
 
     @Autowired
-    private UserService userService;
+    private OrderService orderService;
 
     @GetMapping
-    public ResponseEntity<List<User>> findALL(){
-        List<User> userList = userService.findAll();
-        return ResponseEntity.ok().body(userList);
+    public ResponseEntity<List<Order>> findall(){
+        List<Order> orderList = orderService.findAll();
+        return ResponseEntity.ok().body(orderList);
     }
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id){
-        User obj = userService.finbById(id);
-        return ResponseEntity.ok().body(obj);
+    @GetMapping(value = "{id}")
+    public ResponseEntity<Order> findById(@PathVariable Long id){
+        Order order = orderService.finbById(id);
+        return ResponseEntity.ok().body(order);
     }
 }
