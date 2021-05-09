@@ -1,8 +1,7 @@
 package br.com.mtisi.course.services;
 
-import br.com.mtisi.course.model.Order;
+import br.com.mtisi.course.entities.Order;
 import br.com.mtisi.course.repository.OrderRepository;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

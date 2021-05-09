@@ -1,7 +1,7 @@
 package br.com.mtisi.course.contorller;
 
 
-import br.com.mtisi.course.model.User;
+import br.com.mtisi.course.entities.User;
 import br.com.mtisi.course.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
