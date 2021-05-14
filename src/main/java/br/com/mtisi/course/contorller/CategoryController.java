@@ -2,9 +2,7 @@ package br.com.mtisi.course.contorller;
 
 
 import br.com.mtisi.course.entities.Category;
-import br.com.mtisi.course.entities.Order;
 import br.com.mtisi.course.services.CategoryService;
-import jdk.dynalink.linker.LinkerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +22,8 @@ public class CategoryController {
 
     @GetMapping
     public ResponseEntity<List<Category>> findall(){
-        List<Category> List = categoryService.findAll();
-        return ResponseEntity.ok().body(List);
+        List<Category> listCategory = categoryService.findAll();
+        return ResponseEntity.ok().body(listCategory);
     }
 
     @GetMapping(value = "{id}")
